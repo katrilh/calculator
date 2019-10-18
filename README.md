@@ -26,6 +26,7 @@ I used [Postman](https://www.getpostman.com) to execute HTTP requests,  and but 
 
 
 **Adding a new a new expression**
+
 To add a new expression to be evaluated, make a POST requests to `/calc`. The body should be on the following format:
 
     {
@@ -42,7 +43,7 @@ If everything goes smoothly you should get a response on the following format:
 *Note that the datatype of the expression is a string*
 
   
-**Viewing previous expression**
+**Viewing previous expressions**
 
 If you wish to view all previous expression (aka display the`calc.json` file), make a GET request to `/history`.  This will return something like this:
 
