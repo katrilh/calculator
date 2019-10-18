@@ -9,6 +9,8 @@ There are two files in this folder,  `product.py` and `product_test.py`. As long
 *Note: It is assumed that the lists are relatively short and that  we truly are only interested in the highest possible product of 3 numbers* 
 
 
+
+
 ## `Task2`
 There are three files in this folder,  `app.py`, `calcfile.py` and `calc.json`.
 
@@ -16,10 +18,12 @@ There are three files in this folder,  `app.py`, `calcfile.py` and `calc.json`.
 `calcfile.py`: Helper file which handles the arithmetic
 `app.py`: The main file, sets up a simple REST API using [flask](https://palletsprojects.com/p/flask/)
 
+
 ### Usage
 Make sure all thee files are saved in the same directory (or they don't have to be, but it's nice to not having to be super fancy with imports), and simply run `app.py`. You can now go to `localhost:5000` and see that the application is up and running. 
 
 I used [Postman](https://www.getpostman.com) to execute HTTP requests,  and but anyway of doing so should work. 
+
 
 **Adding a new a new expression**
 To add a new expression to be evaluated, make a POST requests to `/calc`. The body should be on the following format:
@@ -27,13 +31,19 @@ To add a new expression to be evaluated, make a POST requests to `/calc`. The bo
     {
 	"expression":"(20 - 50) * (2 * -66 / 4) - 1"
 	}
-Note that the datatype of the expression is a string. If everything goes smoothly you should get a response on the following format:
+
+
+If everything goes smoothly you should get a response on the following format:
 
     {
     "result": "989.0"
     }
    
+*Note that the datatype of the expression is a string*
+
+  
 **Viewing previous expression**
+
 If you wish to view all previous expression (aka display the`calc.json` file), make a GET request to `/history`.  This will return something like this:
 
 	{
@@ -51,7 +61,9 @@ If you wish to view all previous expression (aka display the`calc.json` file), m
 	    ...
 	  ]
 	}
-If you would rather only see one of these entries, make a GET request to `/history/<id>`, where is is the "_id" value for that expression. A GET request to `/history/0` will return the following:
+
+
+If you would rather only see one of these entries, make a GET request to `/history/<id>`, where is is the "_id" value for that expression. For instance, a GET request to `/history/0` will return the following:
 
     {
       "_id": 0, 
@@ -59,4 +71,4 @@ If you would rather only see one of these entries, make a GET request to `/histo
       "result": "-9"
     }
 
-*Note: It is assumed that the expressions only contain basic arithmetic operators and that bad HTTP request dont happen.*
+*Note: It is assumed that the expressions only contain basic arithmetic operators*
