@@ -43,9 +43,9 @@ If everything goes smoothly you should get a response on the following format:
 *Note that the datatype of the expression is a string*
 
   
-**Viewing previous expressions**
+**Viewing previous calculations**
 
-If you wish to view all previous expression (aka display the`calc.json` file), make a GET request to `/history`.  This will return something like this:
+If you wish to view all previous calculations (aka display the`calc.json` file), make a GET request to `/history`.  This will return something like this:
 
 	{
 	  "history": [
