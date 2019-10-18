@@ -1,6 +1,6 @@
 # Calculator!
 
-This repo contains two projects.  The code in `task1` finds the the highest possible product of three entries in list of integers, as well as a testfile for that method. The project in `task2` is a simple REST API that can do basic arithmetic.  
+This repo contains two projects, both preforming some calculations.  The code in `task1` finds the the highest possible product of three entries in list of integers, as well as a testfile for that method. The project in `task2` is a simple REST API that can do basic arithmetic.  
 
 
 ## `Task1`
@@ -72,4 +72,4 @@ If you would rather only see one of these entries, make a GET request to `/histo
       "result": "-9"
     }
 
-*Note: It is assumed that the expressions only contain basic arithmetic operators*
+*Note: This application can only evaluate [elementary arithmetic](https://en.wikipedia.org/wiki/Elementary_arithmetic).*
