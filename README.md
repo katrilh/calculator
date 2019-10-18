@@ -14,9 +14,9 @@ There are two files in this folder,  `product.py` and `product_test.py`. As long
 ## `Task2`
 There are three files in this folder,  `app.py`, `calcfile.py` and `calc.json`.
 
-`calc.json`: The "database", where the previous calculations are stored and new ones will be added
-`calcfile.py`: Helper file which handles the arithmetic
-`app.py`: The main file, sets up a simple REST API using [flask](https://palletsprojects.com/p/flask/)
+* `calc.json`: The "database", where the previous calculations are stored and new ones will be added
+* `calcfile.py`: Helper file which handles the arithmetic
+* `app.py`: The main file, sets up a simple REST API using [flask](https://palletsprojects.com/p/flask/)
 
 
 ### Usage
