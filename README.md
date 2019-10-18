@@ -64,7 +64,7 @@ If you wish to view all previous calculations (aka display the`calc.json` file),
 	}
 
 
-If you would rather only see one of these entries, make a GET request to `/history/<id>`, where id is the "_id" value for that expression. For instance, a GET request to `/history/0` will return the following:
+If you would rather only see one of these entries, make a GET request to `/history/<id>`, where id is the "_id" value for that entry. For instance, a GET request to `/history/0` will return the following:
 
     {
       "_id": 0, 
