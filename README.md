@@ -6,7 +6,14 @@ This repo contains two projects, both preforming some calculations.  The code in
 ## `Task1`
 There are two files in this folder,  `product.py` and `product_test.py`. As long as these two files are in the same folder - the test file should run alright. It currently runs a random number of tests on randomly generated lists, but this can easily be altered in the `make_testset()` method.  
 
-*Note: It is assumed that the lists are relatively short and that  we truly are only interested in the highest possible product of 3 numbers* 
+
+`product.py` only contains one function named `calculate_product`. The first thing it does is sort the list in ascending order. If we were to assume that the list would only contain positive entries, we could calculate the highest product by simply multiplying the three highest entries, and we wouldn't necessarily have to sort either,  the bit of code that checks the three highest numbers is `np.product(lst[-3:])`.
+
+Now if we conciser the following sorted list `[-30, -10, 1, 5, 10]`, the previous bit of code would tell us the the highest possible product is `50`. However, the actual highest product in this case would be taking the two lowest entries and the highest one giving us `300`. 
+Because we assume that the list can contain negative integers, we must also check if it is possible to get a higher product by multiplying the most negative numbers. The bit of code that checks is  numbers is `lst[0]*lst[1]*lst[-1]`.
+
+
+*Note: It is assumed that the lists are relatively short and that we are only interested in the highest possible product of 3 numbers* 
 
 
 
