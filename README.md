@@ -7,12 +7,13 @@ This repo contains two projects, both preforming some calculations.  The code in
 There are two files in this folder,  `product.py` and `product_test.py`. As long as these two files are in the same folder - the test file should run alright. It currently runs a random number of tests on randomly generated lists, but this can easily be altered in the `make_testset()` method.  
 
 
-`product.py` only contains one function named `calculate_product()`. The first thing it does is sort the list in ascending order. If we were to assume that the list would only contain positive entries, we could calculate the highest product by simply multiplying the three highest entries, and we wouldn't have to sort. This is not an assumption I chose to work with (see next paragraph). After the list has been sorted, we can retrieve the last three elements and multiply them all with each other to get a candidate result. The bit of code that does this is `np.product(lst[-3:])`.
+`product.py` only contains one function named `calculate_product()`. The first thing it does is sort the list in ascending order. If we were to assume that the list would only contain positive entries, we could calculate the highest product by simply multiplying the three highest entries, and we wouldn't have to sort. 
+This is not an assumption I chose to work with (see next paragraph). After the list has been sorted, we can retrieve the last three elements and multiply them all with each other to get a candidate result. The bit of code that does this is `np.product(lst[-3:])`.
 
 
-Now if we consider the following sorted list `[-30, -10, 1, 5, 10]`,  if only the three highest numbers were picked, we could get a highest possible product equal to `50`. However, as mathematics tells us, two negative numbers will multiply to a positive one. If we multiply the two most negative entries and the highest positive one, we get a candidate result. In this example we get that the highest possible product candidate equal to `300`. The bit of code that generates this candidate is `lst[0]*lst[1]*lst[-1]`.
+Now if we consider the following sorted list `[-30, -10, 1, 5, 10]`,  if only the three highest numbers were picked, we would get a highest possible product equal to `50`. However, mathematics tells us that two negative numbers multiplied yields to a positive number. If we multiply the two most negative entries and the highest positive one, we get another candidate result. In this example that gives us `300`. The bit of code that generates this candidate is `lst[0]*lst[1]*lst[-1]`.
 
-Finally we compare the two candidates, and return only the highest one using the `max()` function
+Finally we compare the two candidates, and return only the highest one using the `max()` function. In the example list, the final highest possible product would be `300`.
 
 
 *Note: It is assumed that the lists are relatively short and that we are only interested in the highest possible product of 3 numbers* 
