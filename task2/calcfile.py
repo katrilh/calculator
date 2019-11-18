@@ -31,3 +31,8 @@ def parse(node):
 
 def calculate_expr(expression):
     return parse(ast.parse(expression, mode='eval').body)
+
+
+if __name__ == '__main__':
+    calculate_expr('')
+    

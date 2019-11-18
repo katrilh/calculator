@@ -18,16 +18,21 @@ def index():
 @app.route('/calc', methods=['POST'])
 def post_expression(fname='calc.json'):
     if not request.json or 'expression' not in request.json:
-        print("Something went wrong!")
-        abort(400)
+        abort(400, "Something went wrong!"
+                   "\nRemember to include 'expression' as part of the JSON request!")
     
     with open(fname) as json_file:
         obj = json.load(json_file)  # loads json file as a python object for manipulation
     
-    _id = obj['history'][-1]['_id'] + 1
-    expr = request.json['expression']
-    res = str(calculate_expr(expr))
-    
+    _id, expr, res = None, None, None
+    try:
+        _id = obj['history'][-1]['_id'] + 1
+        expr = request.json['expression']
+        res = str(calculate_expr(expr))
+        
+    except (SyntaxError, TypeError):
+        abort(400, "Cannot evaluate this expression!")
+        
     temp = {
         "_id":        _id,
         "expression": expr,
